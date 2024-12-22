@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
+        <link href="assets/css/bootstrap.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="icon" href="images/logo.png">
+
+        <title>EA Hastanesi</title>
+
+        
+
+        <style>
+            #popup {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1000;
+                background: white;
+                border-radius: 12px;
+                padding: 20px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                text-align: center;
+                margin-top: 30px;
+            }
+            #popup img {
+                max-width: 100%;
+                max-height: 80vh;
+                border-radius: 12px;
+            }
+            #popup .close-btn {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                font-size: 24px;
+                color: #333;
+                cursor: pointer;
+            }
+            #overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+            }
+        </style>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-light fixed-top shadow-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand me-auto" href="index.html">
+                    <img src="images/logo.png" alt="Logo" class="navbar-logo">
+                </a>
+
+                <div style="margin-right: 120px;" class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="announcements.html">Duyurular</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="emergency.html">Acil Durum</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="calendar.html">Takvim</a>
+                        </li>
+                        
+                        <!-- Ortadaki Kısım -->
+                        <li class="navbar-brand d-none d-lg-block text-center mx-3">
+                            EA Hastanesi
+                            <strong class="d-block">Pediatri Bölümü</strong>
+                        </li>
+        
+                        <li class="nav-item">
+                            <a class="nav-link" href="departments.html">Bölümlerimiz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="doctors.html">Hocalarımız</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="assistants.html">Asistanlarımız</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="quiz.html">Quiz</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="box">
+            <div class="container">
+                <div class="section">
+                    <h3>Çocuk Acil</h3>
+                    <p>Çocuk Acil bölümü, 7/24 hizmet veren ve pediatrik acil durumlara hızlı müdahale sağlayan bir birimdir. Günlük ortalama 150 hasta kabul edilmektedir.</p>
+                    <div class="info-box">
+                        <div>
+                            <h4>Hasta Sayısı</h4>
+                            <p>150</p>
+                        </div>
+                        <div>
+                            <h4>Yataklı Servis</h4>
+                            <p>Hayır</p>
+                        </div>
+                        <div>
+                            <h4>Boş Yatak Sayısı</h4>
+                            <p>-</p>
+                        </div>
+                    </div>
+                    <div class="photo-gallery">
+                        <img src="images/departments/acil1.jpg" alt="Çocuk Acil Fotoğrafı 1" onclick="showPopup('images/departments/acil1.jpg')">
+                        <img src="images/departments/acil2.jpg" alt="Çocuk Acil Fotoğrafı 2" onclick="showPopup('images/departments/acil2.jpg')">
+                        <img src="images/departments/acil3.jpg" alt="Çocuk Acil Fotoğrafı 3" onclick="showPopup('images/departments/acil3.jpg')">
+                        <img src="images/departments/acil4.jpg" alt="Çocuk Acil Fotoğrafı 1" onclick="showPopup('images/departments/acil4.jpg')">
+                        <img src="images/departments/acil5.jpg" alt="Çocuk Acil Fotoğrafı 2" onclick="showPopup('images/departments/acil5.jpg')">
+                        <img src="images/departments/acil6.jpg" alt="Çocuk Acil Fotoğrafı 3" onclick="showPopup('images/departments/acil6.jpg')">
+                        <img src="images/departments/acil7.jpg" alt="Çocuk Acil Fotoğrafı 1" onclick="showPopup('images/departments/acil7.jpg')">
+                        <img src="images/departments/acil8.jpg" alt="Çocuk Acil Fotoğrafı 2" onclick="showPopup('images/departments/acil8.jpg')">
+                        <img src="images/departments/acil9.jpg" alt="Çocuk Acil Fotoğrafı 3" onclick="showPopup('images/departments/acil9.jpg')">
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>Çocuk Yoğun Bakımı</h3>
+                    <p>Çocuk Yoğun Bakımı, kritik durumda olan hastaların tedavi gördüğü bir birimdir. Modern teknolojiler ve uzman kadrosuyla en iyi hizmet sağlanır.</p>
+                    <div class="info-box">
+                        <div>
+                            <h4>Hasta Sayısı</h4>
+                            <p>30</p>
+                        </div>
+                        <div>
+                            <h4>Yataklı Servis</h4>
+                            <p>Evet</p>
+                        </div>
+                        <div>
+                            <h4>Boş Yatak Sayısı</h4>
+                            <p>5</p>
+                        </div>
+                    </div>
+                    <div class="photo-gallery">
+                        <img src="images/departments/yogun1.jpg" alt="Çocuk Acil Fotoğrafı 1" onclick="showPopup('images/departments/yogun1.jpg')">
+                        <img src="images/departments/yogun2.jpg" alt="Çocuk Acil Fotoğrafı 2" onclick="showPopup('images/departments/yogun2.jpg')">
+                        <img src="images/departments/yogun3.jpg" alt="Çocuk Acil Fotoğrafı 3" onclick="showPopup('images/departments/yogun3.jpg')">
+                        <img src="images/departments/yogun4.jpg" alt="Çocuk Acil Fotoğrafı 1" onclick="showPopup('images/departments/yogun4.jpg')">
+                        <img src="images/departments/yogun5.jpg" alt="Çocuk Acil Fotoğrafı 2" onclick="showPopup('images/departments/yogun5.jpg')">
+                        <img src="images/departments/yogun6.jpg" alt="Çocuk Acil Fotoğrafı 3" onclick="showPopup('images/departments/yogun6.jpg')">
+                        <img src="images/departments/yogun7.jpg" alt="Çocuk Acil Fotoğrafı 1" onclick="showPopup('images/departments/yogun7.jpg')">
+                        <img src="images/departments/yogun8.jpg" alt="Çocuk Acil Fotoğrafı 2" onclick="showPopup('images/departments/yogun8.jpg')">
+                        <img src="images/departments/yogun9.jpg" alt="Çocuk Acil Fotoğrafı 3" onclick="showPopup('images/departments/yogun9.jpg')">
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>Çocuk Hematolojisi ve Onkolojisi</h3>
+                    <p>Bu bölüm, pediatrik kan hastalıkları ve onkolojik durumlarla ilgilenir. Tedavi süreçlerinde çocukların rahatlığı önceliklidir.</p>
+                    <div class="info-box">
+                        <div>
+                            <h4>Hasta Sayısı</h4>
+                            <p>40</p>
+                        </div>
+                        <div>
+                            <h4>Yataklı Servis</h4>
+                            <p>Evet</p>
+                        </div>
+                        <div>
+                            <h4>Boş Yatak Sayısı</h4>
+                            <p>3</p>
+                        </div>
+                    </div>
+                    <div class="photo-gallery">
+                        <img src="images/departments/onko1.jpg" alt="Çocuk Acil Fotoğrafı 1" onclick="showPopup('images/departments/onko1.jpg')">
+                        <img src="images/departments/onko2.jpg" alt="Çocuk Acil Fotoğrafı 2" onclick="showPopup('images/departments/onko2.jpg')">
+                        <img src="images/departments/onko3.jpg" alt="Çocuk Acil Fotoğrafı 3" onclick="showPopup('images/departments/onko3.jpg')">
+                        <img src="images/departments/onko4.jpg" alt="Çocuk Acil Fotoğrafı 1" onclick="showPopup('images/departments/onko4.jpg')">
+                        <img src="images/departments/onko5.jpg" alt="Çocuk Acil Fotoğrafı 2" onclick="showPopup('images/departments/onko5.jpg')">
+                        <img src="images/departments/onko6.jpg" alt="Çocuk Acil Fotoğrafı 3" onclick="showPopup('images/departments/onko6.jpg')">
+                        <img src="images/departments/onko7.jpg" alt="Çocuk Acil Fotoğrafı 1" onclick="showPopup('images/departments/onko7.jpg')">
+                        <img src="images/departments/onko8.jpg" alt="Çocuk Acil Fotoğrafı 2" onclick="showPopup('images/departments/onko8.jpg')">
+                        <img src="images/departments/onko9.jpg" alt="Çocuk Acil Fotoğrafı 3" onclick="showPopup('images/departments/onko9.jpg')">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer style="margin-top: 30px;" class="site-footer section-padding" id="contact">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-5 me-auto col-12">
+                        <h5 class="mb-lg-4 mb-3">Poliklinik Çalışma Saatleri</h5>
+
+                        <ul class="list-group list-group-flush">
+
+                            <li class="list-group-item d-flex">
+                                Hafta İçi
+                                <span>8:00 - 17:00</span>
+                            </li>
+
+                            <li class="list-group-item d-flex">
+                                Cumartesi
+                                <span>8:00 - 12:30</span>
+                            </li>
+
+                            <li class="list-group-item d-flex">
+                                Pazar
+                                <span>Kapalı</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-12 my-4 my-lg-0">
+                        <h5 class="mb-lg-4 mb-3">İletişim</h5>
+
+                        <p><a href="mailto:hello@company.co">iletisim@eahastanesi.com</a><p>
+
+                        <p>Esentepe Kampüsü, Üniversite Cd., 54050 Serdivan/Sakarya</p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 ms-auto">
+                        <h5 class="mb-lg-4 mb-3">Sosyal Medya</h5>
+
+                        <ul class="social-icon">
+                            <li><a href="#" class="social-icon-link bi-facebook"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-twitter"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-12 ms-auto mt-4 mt-lg-0">
+                        <p class="copyright-text">Copyright © EA Hastanesi 2024 
+                    </div>
+
+                </div>
+            </section>
+        </footer>
+
+        <div id="popup">
+            <span class="close-btn" onclick="closePopup()">×</span>
+            <img id="popup-img" src="" alt="Büyütülmüş Fotoğraf">
+        </div>
+        <div id="overlay" onclick="closePopup()"></div>
+    
+        <script>
+            function showPopup(imageSrc) {
+                document.getElementById('popup-img').src = imageSrc;
+                document.getElementById('popup').style.display = 'block';
+                document.getElementById('overlay').style.display = 'block';
+            }
+    
+            function closePopup() {
+                document.getElementById('popup').style.display = 'none';
+                document.getElementById('overlay').style.display = 'none';
+            }
+        </script>
+
+    </body>
+</html>

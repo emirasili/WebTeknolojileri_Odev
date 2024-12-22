@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
+        <link href="assets/css/bootstrap.css" rel="stylesheet">
+        <link href="assets/css/icofont.css" rel="stylesheet">
+        <link rel="icon" href="images/logo.png">
+        
+        <title>EA Hastanesi</title>
+
+        <style>
+        
+        .about-circle {
+        border-radius: 100%;
+        width: 350px;
+        height: 350px;
+        margin: 0 auto;
+        padding: 0 20px;
+        }
+
+        .about-text {
+        font-size: var(--h6-font-size);
+        line-height: 2rem;
+        font-weight: var(--font-weight-bold);
+        text-align: center;
+        margin-bottom: 0;
+        }
+
+        .about-number {
+        color: var(--primary-color);
+        font-size: 8rem;
+        margin: 0 10px;
+        }
+        
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            margin-top: -150px;
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #0056b3; 
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            background: transparent;
+        }
+
+        .map-overlay i {
+            font-size: 2.5rem;
+            color: #0056b3; 
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        #google-map {
+            line-height: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 2rem;
+            color: #0056b3;
+            text-transform: uppercase;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #ffffff;
+            letter-spacing: 0.05rem;
+        }
+
+        td {
+            color: #555;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e9ecef;
+            transition: background-color 0.3s ease;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        @media screen and (max-width: 768px) {
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-light fixed-top shadow-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand me-auto" href="index.html">
+                    <img src="images/logo.png" alt="Logo" class="navbar-logo">
+                </a>
+
+                <div style="margin-right: 135px;" class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="announcements.html">Duyurular</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="emergency.html">Acil Durum</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="calendar.html">Takvim</a>
+                        </li>
+                        
+                        <li class="navbar-brand d-none d-lg-block text-center mx-3">
+                            EA Hastanesi
+                            <strong class="d-block">Pediatri Bölümü</strong>
+                        </li>
+        
+                        <li class="nav-item">
+                            <a class="nav-link" href="departments.html">Bölümlerimiz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="doctors.html">Hocalarımız</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="assistants.html">Asistanlarımız</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="quiz.html">Quiz</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <h2>Nöbet Programı</h2>
+        <table id="shift-table">
+            <input type="text" id="searchInput" placeholder="Asistan adı veya bölüm ara..." style="margin: 20px auto; display: block; width: 50%; padding: 10px;">
+            <thead>
+                <tr>
+                    <th>Asistan Adı</th>
+                    <th>Bölüm</th>
+                    <th>Nöbet Başlangıç Tarihi</th>
+                    <th>Nöbet Bitiş Tarihi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- JS ile doldurulacak -->
+            </tbody>
+        </table>
+
+        <section class="section-padding" id="about">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <h2 class="mb-lg-3 mb-3">HAKKIMIZDA</h2>
+
+                        <p>EA Hastanesi Pediatri Bölümü olarak, çocuk sağlığını en üst düzeyde korumak ve iyileştirmek için modern tıp uygulamaları ve insancıl yaklaşımımızla hizmet veriyoruz. Yenidoğan bebeklerden ergenlik dönemine kadar tüm çocukların sağlıklı gelişimini desteklemek, hastalıklarını doğru ve etkili yöntemlerle tedavi etmek temel hedefimizdir. Uzman pediatristlerimiz, deneyimli sağlık ekibimiz ve teknolojik altyapımızla, hastalarımıza güvenli ve konforlu bir sağlık hizmeti sunuyoruz.</p>
+
+                        <p>Bölümümüzde Çocuk Acil, Yoğun Bakım, Hematoloji ve Onkoloji gibi özel alanlarda multidisipliner bir anlayışla çalışıyor; her çocuğun ihtiyacına özel çözümler üretiyoruz. Ailelerin endişelerini anlıyor, onları sürece dahil ederek bilgilendiriyoruz. Çocuklarımızın sağlığına kavuşması ve geleceğe umutla bakabilmesi için tüm gücümüzle yanlarında olmaktan mutluluk duyuyoruz.</p>
+                    </div>
+
+                    <div class="col-lg-4 col-md-5 col-12 mx-auto">
+                        <div class="about-circle bg-white shadow-lg d-flex justify-content-center align-items-center">
+                            <p class="about-text"><span class="about-number">12</span> Yıllık<br> Deneyim</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="map-container">
+            <div class="map-overlay">
+                <i class="icofont-google-map"></i>
+                <h3>EA Hastanesi Pediatri Bölümü'ne Ulaşım</h3>
+                <p>Bize kolayca ulaşmak için haritayı kullanabilirsiniz.</p>
+            </div>
+        </div>
+
+        <section id="google-map">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.879735137233!2d30.328146676600504!3d40.74267177138891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ccadf2977958d7%3A0xc7996fa884f94c03!2sSakarya%20University!5e0!3m2!1sen!2str!4v1734395369473!5m2!1sen!2str" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </section> 
+    
+        <footer class="site-footer section-padding" id="contact">
+            <div class="container">
+                <div class="row">
+    
+                    <div class="col-lg-5 me-auto col-12">
+                        <h5 class="mb-lg-4 mb-3">Poliklinik Çalışma Saatleri</h5>
+    
+                        <ul class="list-group list-group-flush">
+    
+                            <li class="list-group-item d-flex">
+                                Hafta İçi
+                                <span>8:00 - 17:00</span>
+                            </li>
+    
+                            <li class="list-group-item d-flex">
+                                Cumartesi
+                                <span>8:00 - 12:30</span>
+                            </li>
+    
+                            <li class="list-group-item d-flex">
+                                Pazar
+                                <span>Kapalı</span>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="col-lg-2 col-md-6 col-12 my-4 my-lg-0">
+                        <h5 class="mb-lg-4 mb-3">İletişim</h5>
+    
+                        <p><a href="mailto:hello@company.co">iletisim@eahastanesi.com</a><p>
+    
+                        <p>Esentepe Kampüsü, Üniversite Cd., 54050 Serdivan/Sakarya</p>
+                    </div>
+    
+                    <div class="col-lg-3 col-md-6 col-12 ms-auto">
+                        <h5 class="mb-lg-4 mb-3">Sosyal Medya</h5>
+    
+                        <ul class="social-icon">
+                            <li><a href="#" class="social-icon-link bi-facebook"></a></li>
+    
+                            <li><a href="#" class="social-icon-link bi-twitter"></a></li>
+    
+                            <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+    
+                            <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="col-lg-3 col-12 ms-auto mt-4 mt-lg-0">
+                        <p class="copyright-text">Copyright © EA Hastanesi 2024 
+                    </div>
+    
+                </div>
+            </section>
+        </footer>
+
+    <script>
+        let shifts = JSON.parse(localStorage.getItem('hospitalShifts')) || [];
+
+        function renderShiftTable() {
+            const tableBody = document.querySelector('#shift-table tbody');
+            tableBody.innerHTML = '';
+
+            shifts.forEach(shift => {
+            const startDate = new Date(shift.date);
+            const endDate = new Date(startDate);
+            endDate.setDate(startDate.getDate() + 1); 
+
+            const endDateString = endDate.toISOString().split('T')[0]; 
+
+            const row = `
+                <tr>
+                    <td>${shift.assistant}</td>
+                    <td>${shift.department}</td>
+                    <td>${shift.date}</td>
+                    <td>${endDateString}</td>
+                </tr>
+            `;
+            tableBody.insertAdjacentHTML('beforeend', row);
+                    });
+                }
+
+        renderShiftTable();
+
+                document.getElementById('searchInput').addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            const rows = document.querySelectorAll('#shift-table tbody tr');
+
+            rows.forEach(row => {
+                const text = row.innerText.toLowerCase();
+                row.style.display = text.includes(query) ? '' : 'none';
+            });
+        });
+
+    </script>
+        
+    </body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
+        <link href="assets/css/bootstrap.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="icon" href="images/logo.png">
+
+        <title>EA Hastanesi</title>
+
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f4f6f9;
+                margin: 0;
+                padding-top: 80px;
+            }
+    
+            h1 {
+                color: #1d3557;
+                text-align: center;
+                font-size: 32px;
+                margin-bottom: 30px;
+            }
+    
+            .container2 {
+                max-width: 900px;
+                margin: 0 auto;
+                background: white;
+                padding: 30px;
+                border-radius: 12px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-light fixed-top shadow-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand me-auto" href="index.html">
+                    <img src="images/logo.png" alt="Logo" class="navbar-logo">
+                </a>
+
+                <div style="margin-right: 120px;" class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="announcements.html">Duyurular</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="emergency.html">Acil Durum</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="calendar.html">Takvim</a>
+                        </li>
+                        
+                        <li class="navbar-brand d-none d-lg-block text-center mx-3">
+                            EA Hastanesi
+                            <strong class="d-block">Pediatri Bölümü</strong>
+                        </li>
+        
+                        <li class="nav-item">
+                            <a class="nav-link" href="departments.html">Bölümlerimiz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="doctors.html">Hocalarımız</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="assistants.html">Asistanlarımız</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="quiz.html">Quiz</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container2">
+            <h1>Pandemi Quiz</h1>
+            <form id="quiz-form">
+                <div class="question">
+                    <h3>1. Pandemi sırasında izolasyonun süresi ne kadar olmalıdır?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="0"> 3 gün</label>
+                        <label><input type="radio" name="q1" value="1"> 7-10 gün</label>
+                        <label><input type="radio" name="q1" value="0"> 14 gün</label>
+                        <label><input type="radio" name="q1" value="0"> Süresiz</label>
+                    </div>
+                </div>
+        
+                <div class="question">
+                    <h3>2. Enfekte bir kişinin semptom göstermeyenlere bulaştırma oranı nedir?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="1"> Yüksek</label>
+                        <label><input type="radio" name="q2" value="0"> Orta</label>
+                        <label><input type="radio" name="q2" value="0"> Düşük</label>
+                        <label><input type="radio" name="q2" value="0"> Yok</label>
+                    </div>
+                </div>
+        
+                <div class="question">
+                    <h3>3. Hangi maske türü pandemi sırasında en etkili korumayı sağlar?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="1"> N95</label>
+                        <label><input type="radio" name="q3" value="0"> Cerrahi maske</label>
+                        <label><input type="radio" name="q3" value="0"> Bez maske</label>
+                        <label><input type="radio" name="q3" value="0"> Hiçbiri</label>
+                    </div>
+                </div>
+        
+                <div class="question">
+                    <h3>4. Pandemi sırasında el yıkama süresi en az kaç saniye olmalıdır?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="1"> 20 saniye</label>
+                        <label><input type="radio" name="q4" value="0"> 10 saniye</label>
+                        <label><input type="radio" name="q4" value="0"> 5 saniye</label>
+                        <label><input type="radio" name="q4" value="0"> 1 dakika</label>
+                    </div>
+                </div>
+        
+                <div class="question">
+                    <h3>5. COVID-19 gibi pandemilerde sosyal mesafe en az ne kadar olmalıdır?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="0"> 50 cm</label>
+                        <label><input type="radio" name="q5" value="1"> 1.5 metre</label>
+                        <label><input type="radio" name="q5" value="0"> 5 metre</label>
+                        <label><input type="radio" name="q5" value="0"> 10 metre</label>
+                    </div>
+                </div>
+        
+                <div class="question">
+                    <h3>6. COVID-19'un belirtileri arasında hangisi bulunmaz?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="0"> Ateş</label>
+                        <label><input type="radio" name="q6" value="0"> Öksürük</label>
+                        <label><input type="radio" name="q6" value="1"> Kemik kırılması</label>
+                        <label><input type="radio" name="q6" value="0"> Nefes darlığı</label>
+                    </div>
+                </div>
+        
+                <div class="question">
+                    <h3>7. El dezenfektanı hangi minimum alkol oranında etkili kabul edilir?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="0"> %40</label>
+                        <label><input type="radio" name="q7" value="1"> %60</label>
+                        <label><input type="radio" name="q7" value="0"> %70</label>
+                        <label><input type="radio" name="q7" value="0"> %90</label>
+                    </div>
+                </div>
+        
+                <div class="question">
+                    <h3>8. Pandemi sırasında kalabalık ortamlarda bulunma süresi nasıl olmalıdır?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="1"> Mümkün olduğunca kısa</label>
+                        <label><input type="radio" name="q8" value="0"> 1 saat</label>
+                        <label><input type="radio" name="q8" value="0"> 2 saat</label>
+                        <label><input type="radio" name="q8" value="0"> Sınırsız</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <h3>9. Aşılar pandemi sırasında hangi amaca hizmet eder?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="0"> Semptomları artırır</label>
+                        <label><input type="radio" name="q9" value="1"> Bağışıklık kazandırır</label>
+                        <label><input type="radio" name="q9" value="0"> Hastalığı yayar</label>
+                        <label><input type="radio" name="q9" value="0"> Hiçbir etkisi yoktur</label>
+                    </div>
+                </div>
+        
+                <div class="question">
+                    <h3>10. Pandemi sırasında hangisi en çok dikkat edilmesi gereken hijyen önlemidir?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="0"> Günde bir kez elleri yıkamak</label>
+                        <label><input type="radio" name="q10" value="1"> Elleri sık sık yıkamak</label>
+                        <label><input type="radio" name="q10" value="0"> Elleri yıkamamak</label>
+                        <label><input type="radio" name="q10" value="0"> Maske takmamak</label>
+                    </div>
+                </div>
+        
+        
+                <button type="button" class="btn-submit" onclick="calculateResult()">Gönder</button>
+            </form>
+        
+            <div id="result" class="result"></div>
+            <div id="error" class="error"></div>
+        </div>
+
+        <footer style="margin-top: 30px;" class="site-footer section-padding" id="contact">
+            <div class="container">
+                <div class="row">
+    
+                    <div class="col-lg-5 me-auto col-12">
+                        <h5 class="mb-lg-4 mb-3">Poliklinik Çalışma Saatleri</h5>
+    
+                        <ul class="list-group list-group-flush">
+    
+                            <li class="list-group-item d-flex">
+                                Hafta İçi
+                                <span>8:00 - 17:00</span>
+                            </li>
+    
+                            <li class="list-group-item d-flex">
+                                Cumartesi
+                                <span>8:00 - 12:30</span>
+                            </li>
+    
+                            <li class="list-group-item d-flex">
+                                Pazar
+                                <span>Kapalı</span>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="col-lg-2 col-md-6 col-12 my-4 my-lg-0">
+                        <h5 class="mb-lg-4 mb-3">İletişim</h5>
+    
+                        <p><a href="mailto:hello@company.co">iletisim@eahastanesi.com</a><p>
+    
+                        <p>Esentepe Kampüsü, Üniversite Cd., 54050 Serdivan/Sakarya</p>
+                    </div>
+    
+                    <div class="col-lg-3 col-md-6 col-12 ms-auto">
+                        <h5 class="mb-lg-4 mb-3">Sosyal Medya</h5>
+    
+                        <ul class="social-icon">
+                            <li><a href="#" class="social-icon-link bi-facebook"></a></li>
+    
+                            <li><a href="#" class="social-icon-link bi-twitter"></a></li>
+    
+                            <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+    
+                            <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="col-lg-3 col-12 ms-auto mt-4 mt-lg-0">
+                        <p class="copyright-text">Copyright © EA Hastanesi 2024 
+                    </div>
+    
+                </div>
+            </section>
+        </footer>
+    
+        <script>
+            function calculateResult() {
+                const form = document.getElementById('quiz-form');
+                const resultDiv = document.getElementById('result');
+                const errorDiv = document.getElementById('error');
+                let score = 0;
+                const totalQuestions = 10;
+                const correctAnswers = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]; // Doğru cevapların sırası (index: 1 = doğru)
+                const wrongQuestions = [];
+
+                for (let i = 1; i <= totalQuestions; i++) {
+                    const question = form[`q${i}`];
+                    const userAnswer = Array.from(question).find(input => input.checked);
+                    if (!userAnswer) {
+                        errorDiv.textContent = "Lütfen tüm soruları cevaplayın.";
+                        return;
+                    }
+
+                    if (parseInt(userAnswer.value) === correctAnswers[i - 1]) {
+                        score++;
+                    } else {
+                        wrongQuestions.push(i);
+                    }
+                }
+
+                errorDiv.textContent = "";
+                resultDiv.style.padding = "10px";
+                resultDiv.style.borderRadius = "8px";
+
+                let resultMessage = "";
+                if (score === totalQuestions) {
+                    resultMessage = `Tebrikler! Tüm cevaplar doğru. Bilgi seviyeniz çok yüksek!`;
+                    resultDiv.style.backgroundColor = "#28a745"; // Yeşil
+                    resultDiv.style.color = "#fff";
+                } else if (score >= totalQuestions / 2) {
+                    resultMessage = `İyi iş! Bilgi seviyeniz orta düzeyde. Eksik bilgilerinizi tamamlayabilirsiniz.`;
+                    resultDiv.style.backgroundColor = "#ffc107"; // Sarı
+                    resultDiv.style.color = "#333";
+                } else {
+                    resultMessage = `Daha fazla çalışmanız gerekiyor! Bilgi seviyeniz düşük.`;
+                    resultDiv.style.backgroundColor = "#dc3545"; // Kırmızı
+                    resultDiv.style.color = "#fff";
+                }
+
+                if (wrongQuestions.length > 0) {
+                    resultMessage += `<br>Yanlış cevapladığınız sorular: ${wrongQuestions.join(", ")}`;
+                }
+
+                resultDiv.innerHTML = resultMessage;
+            }
+        </script>
+
+    </body>
+</html>

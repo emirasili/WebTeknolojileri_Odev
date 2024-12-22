@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
+        <link href="assets/css/bootstrap.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="icon" href="images/logo.png">
+
+        <title>EA Hastanesi</title>
+
+        <style>
+    h3{
+      text-align: left;
+    }
+    .box{
+      margin-top: 100px;
+    }
+    .grid-container {
+      display: flex;
+      flex-wrap: wrap;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      justify-content: center;
+    }
+    .card {
+      width: 320px;
+      height: 210px;
+      position: relative;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      cursor: pointer;
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .card h3 {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-light fixed-top shadow-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand me-auto" href="index.html">
+                    <img src="images/logo.png" alt="Logo" class="navbar-logo">
+                </a>
+
+                <div style="margin-right: 135px;" class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="announcements.html">Duyurular</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="emergency.html">Acil Durum</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="calendar.html">Takvim</a>
+                        </li>
+                        
+                        <li class="navbar-brand d-none d-lg-block text-center mx-3">
+                            EA Hastanesi
+                            <strong class="d-block">Pediatri Bölümü</strong>
+                        </li>
+        
+                        <li class="nav-item">
+                            <a class="nav-link" href="departments.html">Bölümlerimiz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="doctors.html">Hocalarımız</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="assistants.html">Asistanlarımız</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="quiz.html">Quiz</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="box">
+          <div class="grid-container">
+              <div class="card" onclick="openPopup('Dr. Levent Atahanlı', 'Çocuk Yoğun Bakımı', '0555 555 55 55', 'latahanli@eahastanesi.com', 'images/doctors/doctor1.jpg', 'Tıp Fakültesi Mezunu', '5 Yıllık Yoğun Bakım Deneyimi', 'Türkçe, İngilizce', '3 Akademik Makale')">
+                  <img src="images/doctors/doctor1.jpg" alt="Doktor Fotoğrafı">
+                  <h3>Dr. Levent Atahanlı</h3>
+                  <p style="text-align: left;" class="text-muted">Çocuk Yoğun Bakımı</p>
+              </div>
+              <div class="card" onclick="openPopup('Dr. Murat Demir', 'Çocuk Hematolojisi ve Onkolojisi', '0555 555 55 55', 'mdemir@eahastanesi.com', 'images/doctors/doctor2.jpg', 'Tıp Fakültesi Mezunu', '8 Yıllık Hematoloji Deneyimi', 'Türkçe, İngilizce, Almanca', '5 Akademik Makale')">
+                  <img src="images/doctors/doctor2.jpg" alt="Doktor Fotoğrafı">
+                  <h3>Dr. Murat Demir</h3>
+                  <p style="text-align: left;" class="text-muted">Çocuk Hematolojisi ve Onkolojisi</p>
+              </div>
+              <div class="card" onclick="openPopup('Dr. Gülümsün Kaya', 'Çocuk Acil', '0555 555 55 55', 'gkaya@eahastanesi.com', 'images/doctors/doctor3.jpg', 'Tıp Fakültesi Mezunu', '10 Yıllık Acil Tıp Deneyimi', 'Türkçe, İngilizce', '7 Akademik Makale')">
+                  <img src="images/doctors/doctor3.jpg" alt="Doktor Fotoğrafı">
+                  <h3>Dr. Gülümsün Kaya</h3>
+                  <p style="text-align: left;" class="text-muted">Çocuk Acil</p>
+              </div>
+              <div class="card" onclick="openPopup('Dr. Tuba Aygün', 'Çocuk Yoğun Bakımı', '0555 555 55 55', 'taygun@eahastanesi.com', 'images/doctors/doctor4.jpg', 'Tıp Fakültesi Mezunu', '3 Yıllık Yoğun Bakım Deneyimi', 'Türkçe, İngilizce', '2 Akademik Makale')">
+                  <img src="images/doctors/doctor4.jpg" alt="Doktor Fotoğrafı">
+                  <h3>Dr. Tuba Aygün</h3>
+                  <p style="text-align: left;" class="text-muted">Çocuk Yoğun Bakımı</p>
+              </div>
+          </div>
+        </div>
+      
+    <div id="popup" class="popup">
+        <span class="close-btn" onclick="closePopup()">×</span>
+        <div class="popup-header">
+            <img id="popupPhoto" src="" alt="Doktor Fotoğrafı">
+            <h3 id="popupTitle"></h3>
+        </div>
+        <p><strong>Görevli Bölüm:</strong> <span id="popupDepartment"></span></p>
+        <p><strong>Telefon:</strong> <span id="popupPhone"></span></p>
+        <p><strong>E-posta:</strong> <span id="popupEmail"></span></p>
+        <p><strong>Eğitim:</strong> <span id="popupEducation"></span></p>
+        <p><strong>Deneyimler:</strong> <span id="popupExperience"></span></p>
+        <p><strong>Diller:</strong> <span id="popupLanguages"></span></p>
+        <p><strong>Yayınlar:</strong> <span id="popupPublications"></span></p>
+        <button onclick="closePopup()">Kapat</button>
+    </div>
+    <div id="overlay" class="overlay" onclick="closePopup()"></div>
+
+    <h2 class="soru-cevap-baslik">Doktorlara Sorun</h2>
+    <div class="soru-form">
+        <form id="soruForm">
+            <label for="name">İsim Soyisim:</label>
+            <input type="text" id="name" name="name" placeholder="Adınızı yazınız" required>
+
+            <label for="email">E-posta:</label>
+            <input type="email" id="email" name="email" placeholder="E-posta adresinizi yazınız" required>
+
+            <label for="doctor">Doktor Seçin:</label>
+            <select id="doctor" name="doctor" required>
+                <option>Dr. Levent Atahanlı</option>
+                <option>Dr. Murat Demir</option>
+                <option>Dr. Gülümsün Kaya</option>
+                <option>Dr. Tuba Aygün</option>
+            </select>
+
+            <label for="title">Soru Başlığı:</label>
+            <input type="text" id="title" name="title" placeholder="Sorunuzun başlığı" required>
+
+            <label for="details">Soru Detayı:</label>
+            <textarea id="details" name="details" rows="4" placeholder="Sorunuzu buraya yazınız" required></textarea>
+
+            <button type="submit">Gönder</button>
+        </form>
+    </div>
+
+    <h2 class="soru-cevap-baslik">Sorular ve Cevaplar</h2>
+    <div class="soru-cevap-box">
+        <div class="soru">"Çocuğum sürekli öksürüyor, ne yapmalıyım?"</div>
+        <div class="cevap">Dr. Levent Atahanlı: "Öncelikle muayene gereklidir. Bol sıvı tüketimine dikkat edin."</div>
+    </div>
+    <div class="soru-cevap-box">
+        <div class="soru">"Lösemi belirtileri nelerdir?"</div>
+        <div class="cevap">Dr. Murat Demir: "Lösemi belirtileri kansızlık, morluk ve halsizlik şeklinde görülebilir."</div>
+    </div>
+
+
+    <footer style="margin-top: 100px;" class="site-footer section-padding" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 me-auto col-12">
+                    <h5 class="mb-lg-4 mb-3">Poliklinik Çalışma Saatleri</h5>
+
+                    <ul class="list-group list-group-flush">
+
+                        <li class="list-group-item d-flex">
+                            Hafta İçi
+                            <span>8:00 - 17:00</span>
+                        </li>
+
+                        <li class="list-group-item d-flex">
+                            Cumartesi
+                            <span>8:00 - 12:30</span>
+                        </li>
+
+                        <li class="list-group-item d-flex">
+                            Pazar
+                            <span>Kapalı</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-6 col-12 my-4 my-lg-0">
+                    <h5 class="mb-lg-4 mb-3">İletişim</h5>
+
+                    <p><a href="mailto:hello@company.co">iletisim@eahastanesi.com</a><p>
+
+                    <p>Esentepe Kampüsü, Üniversite Cd., 54050 Serdivan/Sakarya</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 ms-auto">
+                    <h5 class="mb-lg-4 mb-3">Sosyal Medya</h5>
+
+                    <ul class="social-icon">
+                        <li><a href="#" class="social-icon-link bi-facebook"></a></li>
+
+                        <li><a href="#" class="social-icon-link bi-twitter"></a></li>
+
+                        <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+
+                        <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-12 ms-auto mt-4 mt-lg-0">
+                    <p class="copyright-text">Copyright © EA Hastanesi 2024 
+                </div>
+
+            </div>
+        </section>
+    </footer>
+    
+      
+        <script>
+          function openPopup(title, department, phone, email, photo, education, experience, languages, publications) {
+              document.getElementById('popupTitle').innerText = title;
+              document.getElementById('popupDepartment').innerText = department;
+              document.getElementById('popupPhone').innerText = phone;
+              document.getElementById('popupEmail').innerText = email;
+              document.getElementById('popupPhoto').src = photo;
+              document.getElementById('popupEducation').innerText = education;
+              document.getElementById('popupExperience').innerText = experience;
+              document.getElementById('popupLanguages').innerText = languages;
+              document.getElementById('popupPublications').innerText = publications;
+              document.getElementById('popup').style.display = 'block';
+              document.getElementById('overlay').style.display = 'block';
+            }
+        
+            function closePopup() {
+                document.getElementById('popup').style.display = 'none';
+                document.getElementById('overlay').style.display = 'none';
+            }
+        </script>
+
+        <script>
+            document.getElementById("soruForm").addEventListener("submit", function(event) {
+                event.preventDefault(); 
+                alert("Başarıyla gönderildi!");
+                document.getElementById("soruForm").reset();
+            });
+        </script>
+
+    </body>
+</html>
